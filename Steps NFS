@@ -1,0 +1,10 @@
+yum -y install nfs-utils nfs-utils-lib or nfs*
+mkdir /public
+cd public
+vi /etc/exports
+	add dir to share
+/public *(ro,sync)
+service rpcbind
+service nfs running
+showmount -e IP of share server
+mount 192.168.0.1:/public /mnt
